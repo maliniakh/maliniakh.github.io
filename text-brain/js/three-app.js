@@ -269,8 +269,8 @@
         this.limitSignals = 12000;
         this.particlePool = new ParticlePool(this.limitSignals);	// *************** ParticlePool must bigger than limit Signal ************
 
-        this.signalMinSpeed = 0.035;
-        this.signalMaxSpeed = 0.065;
+        this.signalMinSpeed = 0.015;
+        this.signalMaxSpeed = 0.045;
 
         // NN component containers
         this.allNeurons = [];
@@ -427,10 +427,10 @@
         var currentTime = Date.now();
 
         // random fire
-        if(THREE.Math.randInt(0,  480) == 0) {
+        if(THREE.Math.randInt(0, 60) == 0) {
             this.releaseSignalAt(this.allNeurons[THREE.Math.randInt(0, this.allNeurons.length)]);
         }
-        this.releaseSignalAt(this.allNeurons[THREE.Math.randInt(0, this.allNeurons.length)]);
+//        this.releaseSignalAt(this.allNeurons[THREE.Math.randInt(0, this.allNeurons.length)]);
 
         // update neurons state and release signal
         for (ii = 0; ii < this.allNeurons.length; ii++) {
